@@ -1,6 +1,6 @@
 # OpenAI Codex Sandbox
 
-This repository contains a small Rust program used to experiment with the OpenAI Codex capabilities. The program is a simple command line utility that computes the arithmetic mean of numbers contained in a text file.
+This repository contains a small Rust program used to experiment with the OpenAI Codex capabilities. The program is a simple command line utility that computes either the arithmetic mean (default) or the sum of numbers contained in a text file.
 
 ## Using the mean program
 
@@ -10,10 +10,14 @@ The Rust crate is located in the `mean/` directory. To compile the program, run:
 cargo build --release
 ```
 
-Once built, the resulting binary will read numbers from a file you specify and print their average. Lines that are empty or contain whitespace are ignored. For example:
+Once built, the resulting binary will read numbers from a file you specify and print either their arithmetic mean (default) or their sum. Lines that are empty or contain whitespace are ignored. For example:
 
 ```bash
+# Compute the mean (default)
 ./target/release/mean numbers.txt
+
+# Compute the sum instead
+./target/release/mean --sum numbers.txt
 ```
 
 If the input file does not exist or contains no numbers, the program prints an error message.
